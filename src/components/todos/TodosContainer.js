@@ -21,4 +21,10 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(TodosContainer);
+const mapDispatchToProps = dispatch => {
+  return {
+    delete: todooText => dispatch({type: 'DELETE_TODO', payload: todoText})
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(TodosContainer);
